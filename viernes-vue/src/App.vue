@@ -1,28 +1,21 @@
 <template>
   <NavBarComponent></NavBarComponent>
   <router-view />
+  <FooterComponent></FooterComponent>
 </template>
 
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
 
 export default {
   name: "App",
-  components: { NavBarComponent },
+  components: { NavBarComponent, FooterComponent },
 };
 </script>
 
 <style lang="scss">
 @import "@/assets/main.scss";
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
 nav {
   padding: 30px;
 
