@@ -137,3 +137,24 @@ h2 {
     padding-bottom: 0.15rem;
   }
 }
+
+// LAYOUT
+
+// MAIN
+.main-content {
+  padding: $padding-main 0;
+}
+
+.main-text {
+  padding: 0 0 $padding-inner 0;
+}
+
+.main-img {
+  margin: $padding-main auto;
+  max-width: 2145px;
+}
+
+.main__titulo {
+  font-size: $size2;
+  margin-bottom: 2rem;
+}
