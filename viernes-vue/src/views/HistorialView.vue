@@ -5,6 +5,9 @@
 <script>
 export default {
   name: "HistorialView",
+  mounted() {
+    document.title = "Historial de películas - Viernes";
+  },
 };
 </script>
 

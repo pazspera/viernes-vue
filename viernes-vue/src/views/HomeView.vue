@@ -31,5 +31,8 @@
 
 export default {
   name: "HomeView",
+  mounted() {
+    document.title = "Viernes";
+  },
 };
 </script>

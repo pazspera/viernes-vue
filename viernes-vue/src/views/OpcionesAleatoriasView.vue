@@ -5,6 +5,9 @@
 <script>
 export default {
   name: "OpcionesAleatoriasView",
+  mounted() {
+    document.title = "Opciones aleatorias - Viernes";
+  },
 };
 </script>
 
