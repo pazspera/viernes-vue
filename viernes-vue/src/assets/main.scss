@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Karla:wght@300;400;700&family=Major+Mono+Display&family=Outfit:wght@400;700&display=swap");
+
+// VARIABLES
+
+// Colores
+$black: #131316;
+$white: #fffffc;
+$light-gray: #f5f5f5;
+$dark-gray: #d9d9d9;
+$primary: #e3170a;
+// $secondary: green;
+
+// Fuentes
+$font-text: "Karla", sans-serif;
+$font-title: "Cardo", serif;
+$font-logo: "Major Mono Display", monospace;
+
+// Tamaños
+$size1: 3.052rem;
+$size2: 2.441rem;
+$size3: 1.953rem;
+$size4: 1.563rem;
+$size5: 1.25rem;
+$size6: 1rem;
+$size7: 0.8rem;
+$size8: 0.64rem;
+
+$size-large: 3.815rem;
+$size-xxl: 4.768rem;
+
+$size-mobile: 16px;
+$size-tablet: 18px;
+$size-desktop: 22px;
+$size-desktop-lg: 24px;
+
+// Padding
+$padding-main: 3rem;
+$padding-main-mobile: 4.5rem;
+$padding-main-desktop: 3rem;
+$padding-inner: 1.5rem;
+
+// MIXINS
+
+// Mixin para imágenes de fondo
+@mixin background-image {
+  max-width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// RESETS
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: $size-mobile;
+}
+
+body {
+  margin: 0;
+  background-color: $light-gray;
+  color: $black;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// TYPOGRAPHY
+
+body {
+  font-family: $font-text;
+  line-height: 1.6rem;
+}
+
+p {
+  line-height: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-title;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: $size3;
+}
+
+// Cambio font-size dependiendo tamaño dispositivo
+@media (min-width: 720px) {
+  html {
+    font-size: $size-tablet;
+  }
+}
+
+@media (min-width: 1140px) {
+  html {
+    font-size: $size-desktop;
+  }
+}
+
+@media (min-width: 1320px) {
+  html {
+    font-size: $size-desktop-lg;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+// Decoración para links
+.link-line {
+  padding-bottom: 0.35rem;
+  border-bottom-style: solid;
+  border-bottom-width: 2.5px;
+  width: fit-content;
+  // Poner transition en ambos estados para que se anime en mouseenter y mouseleave
+  transition: all 0.25s ease-in-out;
+
+  &:hover,
+  &:focus {
+    transition: all 0.25s ease-in-out;
+    padding-bottom: 0.15rem;
+  }
+}

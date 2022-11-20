@@ -33,4 +33,59 @@
 export default {};
 </script>
 
-<style></style>
+<style lang="scss">
+@import "@/assets/main.scss";
+
+.navbar {
+  background-color: $black;
+
+  &-brand {
+    font-size: $size4;
+    font-family: $font-logo;
+    padding: 0;
+    font-weight: 400;
+  }
+
+  .nav-link {
+    font-size: $size6;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-family: $font-text;
+  }
+}
+
+// Override color a los nav-links
+.navbar-dark,
+.navbar-brand,
+.navbar-nav,
+.nav-link {
+  color: $white !important;
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $primary !important;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+// Override color del navbar-toggler
+.navbar-dark,
+.navbar-toggler {
+  color: rgba($white, 0.3);
+
+  &:hover,
+  &:focus {
+    color: rgba($white, 0.3);
+  }
+}
+
+/* 
+// Color para mostrar página activa en navbar
+.active {
+    font-weight: 700;
+    color: $white !important;
+}
+*/
+</style>
