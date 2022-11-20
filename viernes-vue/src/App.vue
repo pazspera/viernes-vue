@@ -1,11 +1,16 @@
 <template>
-  <nav>
-    <router-link :to="{ name: 'home' }">Home</router-link> |
-    <router-link :to="{ name: 'historialPeliculas' }">Historial de películas</router-link>
-    <router-link :to="{ name: 'opcionesAleatorias' }">Opciones aleatorias</router-link>
-  </nav>
+  <NavBarComponent></NavBarComponent>
   <router-view />
 </template>
+
+<script>
+import NavBarComponent from "@/components/NavBarComponent.vue";
+
+export default {
+  name: "App",
+  components: { NavBarComponent },
+};
+</script>
 
 <style lang="scss">
 #app {
