@@ -40,6 +40,9 @@
             <div class="row grid-peliculas">
               <MovieCardComponent v-for="movie in last6Movies" :key="movie.name" :movie="movie" />
             </div>
+            <div class="d-flex justify-content-center">
+              <router-link :to="{ name: 'historialPeliculas' }" class="btn btn__primary">Historial de películas</router-link>
+            </div>
           </section>
         </div>
       </div>
@@ -80,7 +83,6 @@ export default {
 
 <style lang="scss">
 @import "@/assets/main.scss";
-
 
 .grid-peliculas {
   padding: $padding-inner 0;
