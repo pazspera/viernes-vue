@@ -1,8 +1,10 @@
 <template>
   <div class="card card-pelicula col-12 col-lg-6">
-    <img src="img/cards/card_carrie.jpg" alt="Mujer y adolescente mirándose en el espejo, la mujer sostiene la cara de la adolescente para darle ánimos" class="card-img-top" />
+    <img src="img/cards/card_carrie.jpg" alt="movie.img_card_alt" class="card-img-top" />
     <div class="card-body card-pelicula__contenido">
-      <h3 class="card-pelicula__titulo"><a href="pages/peliculas/carrie.html" class="stretched-link">Carrie (1976)</a></h3>
+      <h3 class="card-pelicula__titulo">
+        <a href="pages/peliculas/carrie.html" class="stretched-link">{{ movie.name }} ({{ movie.year }})</a>
+      </h3>
     </div>
   </div>
 </template>
@@ -10,9 +12,65 @@
 <script>
 export default {
   name: "MovieCardComponent",
+  props: {
+    movie: {
+      type: Object,
+    },
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "@/assets/main.scss";
 
+.card-pelicula {
+  margin-bottom: 2rem;
+
+  &__contenido {
+    background-color: $black;
+    padding: 0.75rem;
+  }
+
+  &__titulo {
+    margin: 0;
+    font-size: $size4;
+  }
+
+  &__titulo a {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.card-vertical {
+  margin-bottom: 2rem;
+
+  &__contenido {
+    background-color: $black;
+    padding: 0.75rem;
+  }
+
+  &__titulo {
+    margin: 0;
+    font-size: $size4;
+  }
+
+  &__titulo a {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+// Override estilo cards Bootstrap
+.card {
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: $light-gray;
+}
+
+.card-img,
+.card-img-top {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
 </style>

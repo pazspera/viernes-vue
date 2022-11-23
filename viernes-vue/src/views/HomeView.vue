@@ -37,7 +37,10 @@
       <div class="row">
         <div class="col">
           <section class="ultimas-peliculas">
-            <MovieCardComponent />
+            <h1 class="main__titulo">Los últimos viernes</h1>
+            <div class="row grid-peliculas">
+              <MovieCardComponent v-for="movie in last6Movies" :key="movie.name" :movie="movie" />
+            </div>
           </section>
         </div>
       </div>
@@ -85,5 +88,9 @@ export default {
 
 #hero_index {
   background-color: red;
+}
+
+.grid-peliculas {
+  padding: $padding-inner 0;
 }
 </style>
