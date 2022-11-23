@@ -4,7 +4,8 @@
     <div class="hero">
       <div class="hero__cartel">
         <p class="hero__leyenda">El viernes pasado vimos</p>
-        <h3 class="hero__titulo">Título de película</h3>
+        <h3 class="hero__titulo">{{ allMovies[0].name }}</h3>
+        <!-- <h3 class="hero__titulo">aaaaaaaaaaaahhhhhhhhhhh</h3> -->
       </div>
     </div>
   </section>
@@ -31,20 +32,25 @@
         </div>
       </div>
     </div>
+
+    <!-- Test v-for -->
+    <ul>
+      <li v-for="movie in allMovies" :key="movie.id">{{ movie.name }}</li>
+    </ul>
   </main>
 </template>
 
 <script>
 // @ is an alias to /src
-import allMovies from "@/assets/data/allMovies.json";
+import allMoviesJSON from "@/assets/data/allMovies.json";
 
 export default {
   name: "HomeView",
   mounted() {
     document.title = "Viernes";
     // Asigna allMovies al data
-    let allMoviesFromJSON = allMovies.allMovies;
-    Object.values(allMoviesFromJSON).forEach((entry) => this.allMovies.push(entry));
+    // let allMoviesFromJSON = allMovies.allMovies;
+    // Object.values(allMoviesFromJSON).forEach((entry) => this.allMovies.push(entry));
     // this.allMovies = Object.values(allMovies.allMovies);
     // this.allMovies = allMovies.allMovies;
     // Recupera las últimas 6 películas
@@ -57,15 +63,58 @@ export default {
     // console.log(this.allMovies);
     // console.log(typeof this.allMovies);
 
+    // console.log(typeof this.allMovies);
+    // console.log(this.allMovies);
+    // let lastMovieTemp = this.allMovies[0];
+    // Object.entries(lastMovieTemp).forEach((item) => this.lastMovie.push(item));
+    // console.log(this.lastMovie);
+
+    // let objectTest = Object.values(allMoviesJSON);
+    // console.log(objectTest);
+    // console.log("objectTest is" + typeof objectTest);
+    // console.log(objectTest[1]);
+
+    let allMoviesSaved = allMoviesJSON.allMovies;
+    console.log(allMoviesSaved);
+
+    let allMoviesOrdered = allMoviesSaved.slice().sort(function (a, b) {
+      // date_seen tiene formato isodate para poder guardarse en JSON
+      // Estas variables convierten el isodate a date para poder ordernar el array por fecha
+      let c = new Date(a.date_seen);
+      let d = new Date(b.date_seen);
+      return d - c;
+    });
+
+    console.log(allMoviesOrdered);
+
+    // Error
+    // this.allMovies = allMoviesOrdered;
+    // Error
+    // this.allMovies = allMoviesSaved;
+    // error
+    // this.allMovies = allMoviesJSON.allMovies;
+
+    // this.allMovies = allMoviesOrdered;
+
+    /* let test = allMoviesJSON.allMovies;
+
+    test.array.forEach((movie) => {
+      this.allMovies.push(movie);
+    });
     console.log(typeof this.allMovies);
-    console.log(this.allMovies);
-    let lastMovieTemp = this.allMovies[0];
-    Object.entries(lastMovieTemp).forEach((item) => this.lastMovie.push(item));
-    console.log(this.lastMovie);
+    console.log(this.allMovies); */
+
+    // console.log(typeof this.allMovies);
+    /* this.allMovies.forEach((movie) => {
+      console.log(movie);
+      console.log(typeof movie);
+    }); */
+
+    // console.log(this.allMovies[0].id);
   },
   data() {
     return {
-      allMovies: [],
+      allMovies: allMoviesJSON.allMovies,
       last6Movies: [],
       lastMovie: [],
     };
