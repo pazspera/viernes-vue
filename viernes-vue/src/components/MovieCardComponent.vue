@@ -1,6 +1,7 @@
 <template>
   <div class="card card-pelicula col-12 col-lg-6">
-    <img src="img/cards/card_carrie.jpg" alt="movie.img_card_alt" class="card-img-top" />
+    <img :="movie.img_card" class="card-img-top"/>
+    <!-- <img src="img/cards/card_carrie.jpg" alt="movie.img_card_alt" class="card-img-top" /> -->
     <div class="card-body card-pelicula__contenido">
       <h3 class="card-pelicula__titulo">
         <a href="pages/peliculas/carrie.html" class="stretched-link">{{ movie.name }} ({{ movie.year }})</a>
