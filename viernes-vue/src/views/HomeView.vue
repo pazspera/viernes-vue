@@ -1,11 +1,10 @@
 <template>
   <!-- Home hero -->
   <section id="hero_index">
-    <div class="hero">
+    <div class="hero" :style="{ backgroundImage: 'url(' + lastMovieBackgroundImg + ')' }">
       <div class="hero__cartel">
         <p class="hero__leyenda">El viernes pasado vimos</p>
         <h3 class="hero__titulo">{{ allMovies[0].name }}</h3>
-        <!-- <h3 class="hero__titulo">aaaaaaaaaaaahhhhhhhhhhh</h3> -->
       </div>
     </div>
   </section>
@@ -45,16 +44,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Test v-for all movies -->
-    <!-- <ul>
-      <li v-for="movie in allMovies" :key="movie.id">{{ movie.name }}</li>
-    </ul> -->
-
-    <!-- Test v-for last 6 movies -->
-    <!-- <ul>
-      <li v-for="movie in last6Movies" :key="movie.id">{{ movie.name }}</li>
-    </ul> -->
   </main>
 </template>
 
@@ -73,11 +62,17 @@ export default {
 
     // Saves last 6 movies
     this.last6Movies = allMoviesJSON.slice(0, 6);
+
+    this.lastMovieBackgroundImg = this.allMovies[0].background_img;
+    console.log(this.lastMovieBackgroundImg);
+    console.log(this.allMovies[0].director);
+    console.log(this.allMovies[0].background_img);
   },
   data() {
     return {
       allMovies: allMoviesJSON,
       last6Movies: [],
+      lastMovieBackgroundImg: "",
     };
   },
 };
