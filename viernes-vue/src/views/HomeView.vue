@@ -33,16 +33,22 @@
       </div>
     </div>
 
-    <!-- Test v-for -->
-    <ul>
+    <!-- Test v-for all movies -->
+    <!-- <ul>
       <li v-for="movie in allMovies" :key="movie.id">{{ movie.name }}</li>
+    </ul> -->
+
+    <!-- Test v-for last 6 movies -->
+    <ul>
+      <li v-for="movie in last6Movies" :key="movie.id">{{ movie.name }}</li>
     </ul>
   </main>
 </template>
 
 <script>
 // @ is an alias to /src
-import allMoviesJSON from "@/assets/data/allMovies.json";
+import allMoviesJSON from "@/assets/data/info_movies1.json";
+// let testAllMovies = "https://github.com/pazspera/viernes-web/blob/main/data/info_movies.json";
 
 export default {
   name: "HomeView",
@@ -74,7 +80,7 @@ export default {
     // console.log("objectTest is" + typeof objectTest);
     // console.log(objectTest[1]);
 
-    let allMoviesSaved = allMoviesJSON.allMovies;
+    /* let allMoviesSaved = allMoviesJSON.allMovies;
     console.log(allMoviesSaved);
 
     let allMoviesOrdered = allMoviesSaved.slice().sort(function (a, b) {
@@ -85,7 +91,7 @@ export default {
       return d - c;
     });
 
-    console.log(allMoviesOrdered);
+    console.log(allMoviesOrdered); */
 
     // Error
     // this.allMovies = allMoviesOrdered;
@@ -111,12 +117,25 @@ export default {
     }); */
 
     // console.log(this.allMovies[0].id);
+
+    /* fetch(testAllMovies, {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+      },
+    }).then((res) => console.log(res)); */
+
+    // last 6 movies
+    this.last6Movies = allMoviesJSON.slice(0, 6);
+
+    // last movie
+    // this.lastMovie = allMoviesJSON.slice(0, 1);
+    // console.log(this.lastMovie);
   },
   data() {
     return {
-      allMovies: allMoviesJSON.allMovies,
+      allMovies: allMoviesJSON,
       last6Movies: [],
-      lastMovie: [],
     };
   },
 };
