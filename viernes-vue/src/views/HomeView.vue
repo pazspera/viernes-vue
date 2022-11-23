@@ -1,7 +1,7 @@
 <template>
   <!-- Home hero -->
   <section id="hero_index">
-    <div class="hero" :style="{ backgroundImage: 'url(' + lastMovieBackgroundImg + ')' }">
+    <div class="hero" :style="{ backgroundImage: 'url(' + lastMovieBackgroundImg + ')' }" :id="allMovies[0].id">
       <div class="hero__cartel">
         <p class="hero__leyenda">El viernes pasado vimos</p>
         <h3 class="hero__titulo">{{ allMovies[0].name }}</h3>
@@ -81,9 +81,6 @@ export default {
 <style lang="scss">
 @import "@/assets/main.scss";
 
-#hero_index {
-  background-color: red;
-}
 
 .grid-peliculas {
   padding: $padding-inner 0;
