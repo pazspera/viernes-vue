@@ -32,6 +32,7 @@ export default {
   props: ["id"],
   mounted() {
     this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
+    document.title = `${this.currentMovie.name} - Viernes`
   },
   data() {
     return {
