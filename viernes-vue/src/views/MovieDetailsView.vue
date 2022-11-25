@@ -1,8 +1,18 @@
 <template>
   <MovieHeroComponent :currentMovie="currentMovie"></MovieHeroComponent>
-  <h1>MovieDetails Page</h1>
-  <p>El id de la peli es: {{ id }}</p>
-  <p v-if="currentMovie">El nombre de la peli es: {{ currentMovie.name }} -- {{ currentMovie.year }}</p>
+
+  <main class="main-content">
+    <div class="main-text">
+      <div class="container">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="pelicula__sinopsis">
+            <h2 class="main__titulo">Sinopsis</h2>
+            <p class="pelicula__sinopsis__text" v-if="currentMovie">{{ currentMovie.sinopsis }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </template>
 
 <script>
