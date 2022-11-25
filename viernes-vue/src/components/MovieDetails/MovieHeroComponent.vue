@@ -1,6 +1,6 @@
 <template>
   <section v-if="currentMovie" class="hero-grid" id="current_movie_hero">
-    <div class="hero-grid__img" id="carrie"></div>
+    <div class="hero-grid__img" :style="{ backgroundImage: `url(${currentMovie.background_img})`}"></div>
     <div class="hero-grid__cartel">
       <h1 class="hero-grid__titulo">{{ currentMovie.name }} ({{ currentMovie.year }})</h1>
       <p class="hero-grid__texto">Dirección: {{ currentMovie.director }}</p>
