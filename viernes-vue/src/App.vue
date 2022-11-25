@@ -1,6 +1,8 @@
 <template>
   <NavBarComponent></NavBarComponent>
-  <router-view />
+  <transition @before-enter="scrollTop" mode="out-in" appear>
+    <router-view />
+  </transition>
   <FooterComponent></FooterComponent>
 </template>
 
@@ -11,6 +13,11 @@ import FooterComponent from "@/components/FooterComponent.vue";
 export default {
   name: "App",
   components: { NavBarComponent, FooterComponent },
+  methods: {
+    scrollTop() {
+      document.getElementById("app").scrollIntoView();
+    },
+  },
 };
 </script>
 
