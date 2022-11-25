@@ -1,6 +1,7 @@
 <template>
   <h1>MovieDetails Page</h1>
   <p>El id de la peli es: {{ id }}</p>
+  <p v-if="currentMovie">El nombre de la peli es: {{ currentMovie.name }} -- {{ currentMovie.year }}</p>
 </template>
 
 <script>
