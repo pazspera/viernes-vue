@@ -3,7 +3,7 @@
     <img :="movie.img_card" class="card-img-top" />
     <div class="card-body card-pelicula__contenido">
       <h3 class="card-pelicula__titulo">
-        <router-link :to="{ name: 'movieDetails', params: { id: movie.id } }" class="stretched-link">{{ movie.name }} ({{ movie.year }})</router-link>
+        <router-link :to="{ name: 'movieDetails', params: { id: movie.id } }" :movie="currentMovie" class="stretched-link">{{ movie.name }} ({{ movie.year }})</router-link>
       </h3>
     </div>
   </div>
@@ -17,6 +17,11 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  data() {
+    return {
+      currentMovie: this.movie,
+    };
   },
 };
 </script>
