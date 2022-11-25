@@ -16,29 +16,43 @@
     "director": "Brian De Palma",
     "duration": "1h 38min",
     "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/j9Mg-GRS46Y\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+    "cast_2": [
+      {
+        "image": {
+          "src": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_1.jpg?raw=true",
+          "alt": "Sissy Spacek"
+        }
+      },
+      {
+        "image": {
+          "src": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_2.jpg?raw=true",
+          "alt": "Piper Laurie"
+        }
+      }
+    ],
     "cast": [
       {
-        "img": "cast_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_1.jpg?raw=true",
         "actor": "Sissy Spacek"
       },
       {
-        "img": "cast_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_2.jpg?raw=true",
         "actor": "Piper Laurie"
       },
       {
-        "img": "cast_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_3.jpg?raw=true",
         "actor": "Amy Irving"
       },
       {
-        "img": "cast_4.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_4.jpg?raw=true",
         "actor": "William Katt"
       },
       {
-        "img": "cast_5.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_5.jpg?raw=true",
         "actor": "Nancy Allen"
       },
       {
-        "img": "cast_6.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_6.jpg?raw=true",
         "actor": "John Travolta"
       }
     ],

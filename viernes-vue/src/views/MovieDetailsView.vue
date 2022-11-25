@@ -16,6 +16,7 @@
 
     <!-- Cast -->
     <MovieCastComponent :currentMovie="currentMovie"></MovieCastComponent>
+
   </main>
 </template>
 
