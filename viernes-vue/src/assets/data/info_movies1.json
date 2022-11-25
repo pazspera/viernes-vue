@@ -69,6 +69,7 @@
       "src": "https://github.com/pazspera/viernes-img/blob/main/cards/card_girl_leapt_through_time.jpg?raw=true",
       "alt": "Barrera de cruce de tren con un conjunto de peatones boca abajo"
     },
+    "background_img": "https://github.com/pazspera/viernes-img/blob/main/hero/hero_girl_leapt_through_time.jpg?raw=true",
     "link_page": "girl_leapt_through_time.html",
     "pick": "Pollo",
     "pick_category": "Pollo",
@@ -117,6 +118,7 @@
       "src": "https://github.com/pazspera/viernes-img/blob/main/cards/card_us.jpg?raw=true",
       "alt": "Familia con dos hijes caminando por la playa vista desde arriba, sus sombras se reflejan en la arena"
     },
+    "background_img": "https://github.com/pazspera/viernes-img/blob/main/hero/hero_us.jpg?raw=true",
     "link_page": "us.html",
     "pick": "Loco",
     "pick_category": "Loco",
@@ -177,6 +179,7 @@
       "src": "https://github.com/pazspera/viernes-img/blob/main/cards/card_birdman.jpg?raw=true",
       "alt": "Hombre en ropa interior levitando en un camarín"
     },
+    "background_img": "https://github.com/pazspera/viernes-img/blob/main/hero/hero_birdman.jpg?raw=true",
     "link_page": "birdman.html",
     "pick": "Paz",
     "pick_category": "Paz",
@@ -237,6 +240,7 @@
       "src": "https://github.com/pazspera/viernes-img/blob/main/cards/card_twelve_monkeys.jpg?raw=true",
       "alt": "Oso caminando en una ciudad desierta. A su lado hay una pared con el logo de los 12 monos y 'lo logramos' escrito en graffiti"
     },
+    "background_img": "https://github.com/pazspera/viernes-img/blob/main/hero/hero_twelve_monkeys.jpg?raw=true",
     "link_page": "twelve_monkeys.html",
     "pick": "Geor",
     "pick_category": "Geor",
@@ -286,6 +290,7 @@
       "src": "https://github.com/pazspera/viernes-img/blob/main/cards/card_akira.jpg?raw=true",
       "alt": "Joven mirando un cerebro flotando dentro de un tubo con líquido amarillo"
     },
+    "background_img": "https://github.com/pazspera/viernes-img/blob/main/hero/hero_akira.jpg?raw=true",
     "link_page": "akira.html",
     "pick": "Pollo",
     "pick_category": "Pollo",
