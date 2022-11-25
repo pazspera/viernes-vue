@@ -16,20 +16,6 @@
     "director": "Brian De Palma",
     "duration": "1h 38min",
     "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/j9Mg-GRS46Y\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
-    "cast_2": [
-      {
-        "image": {
-          "src": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_1.jpg?raw=true",
-          "alt": "Sissy Spacek"
-        }
-      },
-      {
-        "image": {
-          "src": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_2.jpg?raw=true",
-          "alt": "Piper Laurie"
-        }
-      }
-    ],
     "cast": [
       {
         "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_1.jpg?raw=true",
@@ -92,15 +78,15 @@
     "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/eWnTeKEsDlU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
     "cast": [
       {
-        "img": "cast_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/girl_leapt_through_time/girl_leapt_through_time_cast_1.jpg?raw=true",
         "actor": "Riisa Naka"
       },
       {
-        "img": "cast_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/girl_leapt_through_time/girl_leapt_through_time_cast_2.jpg?raw=true",
         "actor": "Takuya Ishida"
       },
       {
-        "img": "cast_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/girl_leapt_through_time/girl_leapt_through_time_cast_3.jpg?raw=true",
         "actor": "Mitsutaka Itakura"
       }
     ],
@@ -140,27 +126,27 @@
     "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hNCmb-4oXJA\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
     "cast": [
       {
-        "img": "cast_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/us/us_cast_1.jpg?raw=true",
         "actor": "Lupita Nyong'o"
       },
       {
-        "img": "cast_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/us/us_cast_2.jpg?raw=true",
         "actor": "Winston Duke"
       },
       {
-        "img": "cast_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/us/us_cast_3.jpg?raw=true",
         "actor": "Shahadi Wright Joseph"
       },
       {
-        "img": "cast_4.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/us/us_cast_4.jpg?raw=true",
         "actor": "Evan Alex"
       },
       {
-        "img": "cast_5.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/us/us_cast_5.jpg?raw=true",
         "actor": "Elisabeth Moss"
       },
       {
-        "img": "cast_6.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/us/us_cast_6.jpg?raw=true",
         "actor": "Tim Heidecker"
       }
     ],
@@ -200,27 +186,27 @@
     "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/uJfLoE6hanc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
     "cast": [
       {
-        "img": "cast_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/birdman/birdman_cast_1.jpg?raw=true",
         "actor": "Michael Keaton"
       },
       {
-        "img": "cast_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/birdman/birdman_cast_2.jpg?raw=true",
         "actor": "Edward Norton"
       },
       {
-        "img": "cast_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/birdman/birdman_cast_3.jpg?raw=true",
         "actor": "Emma Stone"
       },
       {
-        "img": "cast_4.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/birdman/birdman_cast_4.jpg?raw=true",
         "actor": "Zach Galifianakis"
       },
       {
-        "img": "cast_5.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/birdman/birdman_cast_5.jpg?raw=true",
         "actor": "Andrea Riseborough"
       },
       {
-        "img": "cast_6.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/birdman/birdman_cast_6.jpg?raw=true",
         "actor": "Naomi Watts"
       }
     ],
@@ -261,15 +247,15 @@
     "trailerLink": "https://www.youtube.com/watch?v=15s4Y9ffW_o",
     "cast": [
       {
-        "img": "cast_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/twelve_monkeys/twelve_monkeys_cast_1.jpg?raw=true",
         "actor": "Bruce Willis"
       },
       {
-        "img": "cast_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/twelve_monkeys/twelve_monkeys_cast_2.jpg?raw=true",
         "actor": "Madeleine Stowe"
       },
       {
-        "img": "cast_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/twelve_monkeys/twelve_monkeys_cast_3.jpg?raw=true",
         "actor": "Brad Pitt"
       }
     ],
@@ -310,15 +296,15 @@
     "trailerLink": "https://www.youtube.com/watch?v=ooKBenGK3R4&t=7s",
     "cast": [
       {
-        "img": "cast_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/akira/akira_cast_1.jpg?raw=true",
         "actor": "Mitsuo Iwata"
       },
       {
-        "img": "cast_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/akira/akira_cast_2.jpg?raw=true",
         "actor": "Nozomu Sasaki"
       },
       {
-        "img": "cast_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/akira/akira_cast_3.jpg?raw=true",
         "actor": "Mami Koyama"
       }
     ],
