@@ -66,10 +66,8 @@ export default {
     // Saves last 6 movies
     this.last6Movies = allMoviesJSON.slice(0, 6);
 
+    // Puts img of last movie as background img of hero
     this.lastMovieBackgroundImg = this.allMovies[0].background_img;
-    console.log(this.lastMovieBackgroundImg);
-    console.log(this.allMovies[0].director);
-    console.log(this.allMovies[0].background_img);
   },
   data() {
     return {

@@ -4,13 +4,18 @@
 </template>
 
 <script>
+import allMoviesJSON from "@/assets/data/info_movies1.json";
+
 export default {
   name: "MovieDetailsView",
   props: ["id"],
+  mounted() {
+    this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
+    console.log(this.currentMovie);
+  },
   data() {
     return {
-      // Guardamos el movie.id que viene del router
-      // id: this.$route.params.id,
+      currentMovie: null,
     };
   },
 };
