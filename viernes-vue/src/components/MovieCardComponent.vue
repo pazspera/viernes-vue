@@ -4,8 +4,8 @@
     <div class="card-body card-pelicula__contenido">
       <h3 class="card-pelicula__titulo">
         <!-- No funcionó el :to, hay que ver cómo pasarle el id -->
-        <!-- <router-link :to="{ name: movie.id}" class="stretched-link">{{ movie.name }} ({{ movie.year }})</router-link> -->
-        <a href="pages/peliculas/carrie.html" class="stretched-link">{{ movie.name }} ({{ movie.year }})</a>
+        <router-link :to="{ name: 'MovieDetails', params: { id: movie.id } }" class="stretched-link">{{ movie.name }} ({{ movie.year }})</router-link>
+        <!-- <a href="pages/peliculas/carrie.html" class="stretched-link">{{ movie.name }} ({{ movie.year }})</a> -->
       </h3>
     </div>
   </div>

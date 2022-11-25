@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import HistorialView from "../views/HistorialView.vue";
 import OpcionesAleatoriasView from "../views/OpcionesAleatoriasView.vue";
+import MovieDetailsView from "../views/MovieDetailsView.vue";
 
 const routes = [
   {
@@ -41,6 +42,13 @@ const routes = [
     // Redirect opcionesAleatorias
     path: "/pages/seleccion_peliculas.html",
     redirect: "/opciones-aleatorias",
+  },
+  {
+    // MovieDetails, se va ir reemplazando el contenido
+    // con el id de la película
+    path: "/peliculas/:id",
+    name: "MovieDetails",
+    component: MovieDetailsView,
   },
 ];
 
