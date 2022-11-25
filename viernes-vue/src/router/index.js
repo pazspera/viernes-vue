@@ -47,8 +47,9 @@ const routes = [
     // MovieDetails, se va ir reemplazando el contenido
     // con el id de la película
     path: "/peliculas/:id",
-    name: "MovieDetails",
+    name: "movieDetails",
     component: MovieDetailsView,
+    props: true,
   },
 ];
 
