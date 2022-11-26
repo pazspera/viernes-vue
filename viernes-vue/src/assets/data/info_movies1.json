@@ -45,17 +45,17 @@
     ],
     "img_row": [
       {
-        "img": "img_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_img_1.jpg?raw=true",
         "alt": "Adolescente sentada con cara de tristeza delante de la oficina del director de la escuela",
         "class": "always_show"
       },
       {
-        "img": "img_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_img_2.jpg?raw=true",
         "alt": "Dos adolescentes hablando intensamente en la puerta de una casa",
         "class": "always_show"
       },
       {
-        "img": "img_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_img_3.jpg?raw=true",
         "alt": "Vista aérea de una clase de voley de una escuela secundaria",
         "class": "hidden_first"
       }

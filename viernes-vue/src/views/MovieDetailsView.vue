@@ -37,11 +37,7 @@
       </section>
 
       <!-- Images -->
-      <section class="main-img">
-        <div class="img-fluid col-12 col-md-6 colxxl-4 pelicula__img"></div>
-        <div class="img-fluid col-12 col-md-6 colxxl-4 pelicula__img"></div>
-        <div class="img-fluid d-none-d-xxl-block col-xxl-4 pelicula__img"></div>
-      </section>
+      <MovieImgComponent :currentMovie="currentMovie"></MovieImgComponent>
     </main>
   </div>
 </template>
@@ -50,11 +46,12 @@
 import allMoviesJSON from "@/assets/data/info_movies1.json";
 import MovieHeroComponent from "@/components/MovieDetails/MovieHeroComponent.vue";
 import MovieCastComponent from "@/components/MovieDetails/MovieCastComponent.vue";
+import MovieImgComponent from "@/components/MovieDetails/MovieImgComponent.vue";
 import YouTube from "vue3-youtube";
 
 export default {
   name: "MovieDetailsView",
-  components: { MovieHeroComponent, MovieCastComponent, YouTube },
+  components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent },
   props: ["id"],
   mounted() {
     this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
