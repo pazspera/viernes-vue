@@ -95,17 +95,17 @@
     ],
     "img_row": [
       {
-        "img": "img_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/girl_leapt_through_time/girl_leapt_through_time_img_1.jpg?raw=true",
         "alt": "Adolescente en su cuarto despertándose tarde y gritando al despertador",
         "class": "always_show"
       },
       {
-        "img": "img_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/girl_leapt_through_time/girl_leapt_through_time_img_2.jpg?raw=true",
         "alt": "Primer plano de adolescente gritando a cámara en un espacio psicodélico",
         "class": "always_show"
       },
       {
-        "img": "img_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/girl_leapt_through_time/girl_leapt_through_time_img_3.jpg?raw=true",
         "alt": "Muchacha y muchacho caminando por la calle con bicicletas",
         "class": "hidden_first"
       }
@@ -157,17 +157,17 @@
     ],
     "img_row": [
       {
-        "img": "img_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/us/us_img_1.jpg?raw=true",
         "alt": "Niña con trenzas mirando a cámara con cara de susto",
         "class": "always_show"
       },
       {
-        "img": "img_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/us/us_img_2.jpg?raw=true",
         "alt": "Carpa en un parque de diversiones con un cartel que dice 'Encuéntrate a ti mismo'",
         "class": "always_show"
       },
       {
-        "img": "img_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/us/us_img_3.jpg?raw=true",
         "alt": "Mujer viajando en un auto y mirando aburrida por la ventanilla",
         "class": "hidden_first"
       }
@@ -219,17 +219,17 @@
     ],
     "img_row": [
       {
-        "img": "img_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/birdman/birdman_img_1.jpg?raw=true",
         "alt": "Hombre sentado en un camarín mirándose al espejo",
         "class": "always_show"
       },
       {
-        "img": "img_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/birdman/birdman_img_2.jpg?raw=true",
         "alt": "Dos hombres hablando frente a una puerta, una mujer se asoma a través de la puerta",
         "class": "always_show"
       },
       {
-        "img": "img_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/birdman/birdman_img_3.jpg?raw=true",
         "alt": "Hombre y mujer charlando en el techo de un teatro",
         "class": "hidden_first"
       }
@@ -269,17 +269,17 @@
     ],
     "img_row": [
       {
-        "img": "img_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/twelve_monkeys/twelve_monkeys_img_1.jpg?raw=true",
         "alt": "Dos hombres conversando en un manicomio",
         "class": "always_show"
       },
       {
-        "img": "img_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/twelve_monkeys/twelve_monkeys_img_2.jpg?raw=true",
         "alt": "Mujer de pelo rubio corriendo por un aeropuerto y gritando",
         "class": "always_show"
       },
       {
-        "img": "img_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/twelve_monkeys/twelve_monkeys_img_3.jpg?raw=true",
         "alt": "Grupo de científicos sentados frente a una mesa, equipos futuristas los rodean",
         "class": "hidden_first"
       }
@@ -319,17 +319,17 @@
     ],
     "img_row": [
       {
-        "img": "img_1.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/akira/akira_img_1.jpg?raw=true",
         "alt": "Adolescente en una motocicleta futurista de color rojo andando por la calle a gran velocidad",
         "class": "always_show"
       },
       {
-        "img": "img_2.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/akira/akira_img_2.jpg?raw=true",
         "alt": "Niño con cara de anciano sentado en una silla majestuosa",
         "class": "always_show"
       },
       {
-        "img": "img_3.jpg",
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/akira/akira_img_3.jpg?raw=true",
         "alt": "Vista aérea de disturbios en un puente",
         "class": "hidden_first"
       }
