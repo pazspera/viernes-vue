@@ -29,7 +29,7 @@
           <div class="row">
             <div class="col col-lg-9">
               <div class="ratio ration-16x9">
-                <YouTube :src="currentMovie.trailer_link" ref="youtube" />
+                <YouTube :src="currentMovie.trailerLink" ref="youtube" />
               </div>
             </div>
           </div>

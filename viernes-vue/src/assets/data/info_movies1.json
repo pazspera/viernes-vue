@@ -16,7 +16,7 @@
     "director": "Brian De Palma",
     "duration": "1h 38min",
     "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/j9Mg-GRS46Y\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
-    "trailer_link": "https://www.youtube.com/watch?v=j9Mg-GRS46Y",
+    "trailerLink": "https://www.youtube.com/watch?v=j9Mg-GRS46Y",
     "cast": [
       {
         "img": "https://github.com/pazspera/viernes-img/blob/main/movies/carrie/carrie_cast_1.jpg?raw=true",
@@ -78,6 +78,7 @@
     "director": "Mamoru Hosoda",
     "duration": "1h 38min",
     "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/eWnTeKEsDlU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+    "trailerLink": "https://www.youtube.com/watch?v=eWnTeKEsDlU",
     "cast": [
       {
         "img": "https://github.com/pazspera/viernes-img/blob/main/movies/girl_leapt_through_time/girl_leapt_through_time_cast_1.jpg?raw=true",
@@ -127,6 +128,7 @@
     "director": "Jordan Peele",
     "duration": "1h 56min",
     "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hNCmb-4oXJA\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+    "trailerLink": "https://www.youtube.com/watch?v=hNCmb-4oXJA",
     "cast": [
       {
         "img": "https://github.com/pazspera/viernes-img/blob/main/movies/us/us_cast_1.jpg?raw=true",
@@ -188,6 +190,7 @@
     "director": "Alejandro G. Iñárritu",
     "duration": "1h 59min",
     "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/uJfLoE6hanc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+    "trailerLink": "https://www.youtube.com/watch?v=uJfLoE6hanc&t=16s",
     "cast": [
       {
         "img": "https://github.com/pazspera/viernes-img/blob/main/movies/birdman/birdman_cast_1.jpg?raw=true",
