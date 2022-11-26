@@ -17,6 +17,22 @@
 
       <!-- Cast -->
       <MovieCastComponent :currentMovie="currentMovie"></MovieCastComponent>
+
+      <!-- Trailer -->
+      <section class="main-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="main__titulo">Trailer</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-lg-9">
+              <div class="ratio ration-16x9" v-html="currentMovie.trailer"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -32,7 +48,7 @@ export default {
   props: ["id"],
   mounted() {
     this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
-    document.title = `${this.currentMovie.name} - Viernes`
+    document.title = `${this.currentMovie.name} - Viernes`;
   },
   data() {
     return {
