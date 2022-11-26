@@ -16,7 +16,14 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
+// Import VuePlyr
+import VuePlyr from "vue-plyr";
+import "vue-plyr/dist/vue-plyr.css";
+
+// Import vue3-youtube
+import YouTube from "vue3-youtube";
+
 /* add icons to the library */
 library.add(faDiscord, faHeart);
 
-createApp(App).use(router).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
+createApp(App).use(router).use(VuePlyr).use(YouTube).component("font-awesome-icon", FontAwesomeIcon).mount("#app");

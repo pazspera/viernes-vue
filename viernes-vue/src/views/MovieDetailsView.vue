@@ -28,10 +28,19 @@
           </div>
           <div class="row">
             <div class="col col-lg-9">
-              <div class="ratio ration-16x9" v-html="currentMovie.trailer"></div>
+              <div class="ratio ration-16x9">
+                <YouTube :src="currentMovie.trailer_link" ref="youtube" />
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- Images -->
+      <section class="main-img">
+        <div class="img-fluid col-12 col-md-6 colxxl-4 pelicula__img"></div>
+        <div class="img-fluid col-12 col-md-6 colxxl-4 pelicula__img"></div>
+        <div class="img-fluid d-none-d-xxl-block col-xxl-4 pelicula__img"></div>
       </section>
     </main>
   </div>
@@ -41,10 +50,11 @@
 import allMoviesJSON from "@/assets/data/info_movies1.json";
 import MovieHeroComponent from "@/components/MovieDetails/MovieHeroComponent.vue";
 import MovieCastComponent from "@/components/MovieDetails/MovieCastComponent.vue";
+import YouTube from "vue3-youtube";
 
 export default {
   name: "MovieDetailsView",
-  components: { MovieHeroComponent, MovieCastComponent },
+  components: { MovieHeroComponent, MovieCastComponent, YouTube },
   props: ["id"],
   mounted() {
     this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
@@ -54,6 +64,11 @@ export default {
     return {
       currentMovie: null,
     };
+  },
+  methods: {
+    onReady() {
+      this.$refs.youtube.playVideo();
+    },
   },
 };
 </script>
