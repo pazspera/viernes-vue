@@ -27,10 +27,12 @@
             </div>
           </div>
           <div class="row">
-            <div class="col col-lg-9">
-              <div class="ratio ration-16x9">
-                <YouTube :src="currentMovie.trailerLink" ref="youtube" />
-              </div>
+            <!-- Changes content depending on viewport Width -->
+            <div v-if="viewportWidth < 768" class="col col-lg-9">
+              <a :href="currentMovie.trailerLink" class="btn btn__primary" target="_blank" rel="noreferrer">Ver Trailer</a>
+            </div>
+            <div v-else class="col col-lg-9">
+              <YouTube :src="currentMovie.trailerLink" ref="youtube" />
             </div>
           </div>
         </div>
@@ -56,10 +58,17 @@ export default {
   mounted() {
     this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
     document.title = `${this.currentMovie.name} - Viernes`;
+
+    // Listens to changes on viewport width to display trailer
+    // Video if it's over 768px, btn if under
+    addEventListener("resize", () => {
+      this.viewportWidth = window.innerWidth;
+    });
   },
   data() {
     return {
       currentMovie: null,
+      viewportWidth: null,
     };
   },
   methods: {
