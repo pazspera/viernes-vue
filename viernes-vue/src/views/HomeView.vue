@@ -54,6 +54,7 @@
 // @ is an alias to /src
 import allMoviesJSON from "@/assets/data/info_movies1.json";
 import MovieCardComponent from "@/components/MovieCardComponent.vue";
+// let currentMovieIndex = data.findIndex((movie) => movie.id === currentMovieId);
 
 export default {
   name: "HomeView",
@@ -62,6 +63,13 @@ export default {
   },
   mounted() {
     document.title = "Viernes";
+
+    // On mounted, it loops through the entire array of movies
+    // and adds a property with the index in array,
+    // that way that info is available on all movies to move throught the movie details
+    allMoviesJSON.forEach((movie) => {
+      movie.ArrayIndex = allMoviesJSON.indexOf(movie);
+    });
 
     // Saves last 6 movies
     this.last6Movies = allMoviesJSON.slice(0, 6);
