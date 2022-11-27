@@ -9,7 +9,7 @@
           <div class="col-12 col-md-8 col-lg-6">
             <div class="pelicula__sinopsis">
               <h2 class="main__titulo">Sinopsis</h2>
-              <p class="pelicula__sinopsis__text" v-if="currentMovie">{{ currentMovie.sinopsis }}</p>
+              <p class="pelicula__sinopsis__texto" v-if="currentMovie">{{ currentMovie.sinopsis }}</p>
             </div>
           </div>
         </div>
@@ -40,6 +40,13 @@
 
       <!-- Images -->
       <MovieImgComponent :currentMovie="currentMovie"></MovieImgComponent>
+
+      <!-- Navigation between previous and next movies -->
+      <section class="main-text">
+        <div class="container">
+          <div class="row"></div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -68,6 +75,7 @@ export default {
     let allMoviesLength = allMoviesJSON.length;
 
     this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
+
     this.currentMovieArrayIndex = this.currentMovie.ArrayIndex;
     // Checks if the currentMovieArrayIndex is the first or last
     // then assigns previousArrayIndex and nextArrayIndex based on if it is or not
@@ -76,16 +84,19 @@ export default {
       // Gets index of surrounding movies
       this.previousArrayIndex = null;
       this.nextArrayIndex = this.currentMovieArrayIndex + 1;
+      console.log("typeof Previous Array Index: " + typeof this.previousArrayIndex);
     } else if (this.currentMovieArrayIndex === allMoviesLength - 1) {
       console.log("this movie is the first movie seen");
       // Gets index of surrounding movies
       this.previousArrayIndex = this.currentMovieArrayIndex - 1;
       this.nextArrayIndex = null;
+      console.log("typeof Previous Array Index: " + typeof this.previousArrayIndex);
     } else {
       console.log(`this movie's index is ${this.currentMovieArrayIndex}`);
       // Gets index of surrounding movies
       this.previousArrayIndex = this.currentMovieArrayIndex - 1;
       this.nextArrayIndex = this.currentMovieArrayIndex + 1;
+      console.log("typeof Previous Array Index: " + typeof this.previousArrayIndex);
     }
 
     console.log(`current index: ${this.currentMovieArrayIndex}`);
@@ -94,11 +105,21 @@ export default {
 
     console.log("current movie", this.currentMovie);
 
+    // THERE'S AN ERROR HERE THAT'S CAUSING CARRIE TO FAIL
+
     // Saves previousMovieID and nextMovieID to data
-    this.previousMovieID = allMoviesJSON[this.previousArrayIndex].id;
-    console.log("previous movie", this.previousMovieID);
-    this.nextMovieID = allMoviesJSON[this.nextArrayIndex].id;
-    console.log("next movie", this.nextMovieID);
+    // Acá verifica si previousArrayIndex y nextArrayIndex son números
+    // Si no hay previous o next (primera y última peli), estas variables
+    // quedan en null. Al estar en null, cuando trata de usarlas para
+    // recuperar la peli, rompen todo
+    if (typeof this.previousArrayIndex === "number") {
+      this.previousMovieID = allMoviesJSON[this.previousArrayIndex].id;
+      console.log("previous movie", this.previousMovieID);
+    }
+    if (typeof this.nextArrayIndex === "number") {
+      this.nextMovieID = allMoviesJSON[this.nextArrayIndex].id;
+      console.log("next movie", this.nextMovieID);
+    }
 
     document.title = `${this.currentMovie.name} - Viernes`;
 
@@ -117,6 +138,8 @@ export default {
       previousMovieID: null,
       nextMovieID: null,
       viewportWidth: null,
+      isThisTheFirstMovie: false,
+      isThisTheLastMovie: false,
     };
   },
   methods: {
