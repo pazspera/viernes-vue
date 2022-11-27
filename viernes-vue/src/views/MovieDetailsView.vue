@@ -63,7 +63,43 @@ export default {
       movie.ArrayIndex = allMoviesJSON.indexOf(movie);
     });
 
+    // Saving the length of allMovies on a variable
+    // makes it possible to check for the last movie
+    let allMoviesLength = allMoviesJSON.length;
+
     this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
+    this.currentMovieArrayIndex = this.currentMovie.ArrayIndex;
+    // Checks if the currentMovieArrayIndex is the first or last
+    // then assigns previousArrayIndex and nextArrayIndex based on if it is or not
+    if (this.currentMovieArrayIndex === 0) {
+      console.log("this movie is the last movie seen");
+      // Gets index of surrounding movies
+      this.previousArrayIndex = null;
+      this.nextArrayIndex = this.currentMovieArrayIndex + 1;
+    } else if (this.currentMovieArrayIndex === allMoviesLength - 1) {
+      console.log("this movie is the first movie seen");
+      // Gets index of surrounding movies
+      this.previousArrayIndex = this.currentMovieArrayIndex - 1;
+      this.nextArrayIndex = null;
+    } else {
+      console.log(`this movie's index is ${this.currentMovieArrayIndex}`);
+      // Gets index of surrounding movies
+      this.previousArrayIndex = this.currentMovieArrayIndex - 1;
+      this.nextArrayIndex = this.currentMovieArrayIndex + 1;
+    }
+
+    console.log(`current index: ${this.currentMovieArrayIndex}`);
+    console.log(`previous index: ${this.previousArrayIndex}`);
+    console.log(`next index: ${this.nextArrayIndex}`);
+
+    console.log("current movie", this.currentMovie);
+
+    // Saves previousMovieID and nextMovieID to data
+    this.previousMovieID = allMoviesJSON[this.previousArrayIndex].id;
+    console.log("previous movie", this.previousMovieID);
+    this.nextMovieID = allMoviesJSON[this.nextArrayIndex].id;
+    console.log("next movie", this.nextMovieID);
+
     document.title = `${this.currentMovie.name} - Viernes`;
 
     // Listens to changes on viewport width to display trailer
@@ -75,6 +111,11 @@ export default {
   data() {
     return {
       currentMovie: null,
+      currentMovieArrayIndex: null,
+      nextArrayIndex: null,
+      previousArrayIndex: null,
+      previousMovieID: null,
+      nextMovieID: null,
       viewportWidth: null,
     };
   },
