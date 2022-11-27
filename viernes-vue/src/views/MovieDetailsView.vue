@@ -56,6 +56,13 @@ export default {
   components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent },
   props: ["id"],
   mounted() {
+    // On mounted, it loops through the entire array of movies
+    // and adds a property with the index in array,
+    // that way that info is available on all movies to move throught the movie details
+    allMoviesJSON.forEach((movie) => {
+      movie.ArrayIndex = allMoviesJSON.indexOf(movie);
+    });
+
     this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
     document.title = `${this.currentMovie.name} - Viernes`;
 
