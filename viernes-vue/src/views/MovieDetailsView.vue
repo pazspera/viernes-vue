@@ -44,7 +44,31 @@
       <!-- Navigation between previous and next movies -->
       <section class="main-text">
         <div class="container">
-          <div class="row"></div>
+          <!-- Last movie -->
+          <div v-if="isThisTheLastMovie" class="row">
+            <div class="col-6">
+              <a class="btn btn--previous btn__primary">Viernes Anterior</a>
+            </div>
+            <div class="col-6"></div>
+          </div>
+
+          <!-- First movie -->
+          <div v-else-if="isThisTheFirstMovie" class="row">
+            <div class="col-6"></div>
+            <div class="col-6 d-flex flex-row-reverse">
+              <a href="#" class="btn btn__primary btn--previous">Viernes Siguiente</a>
+            </div>
+          </div>
+
+          <!-- All other movies -->
+          <div v-else class="row">
+            <div class="col-6">
+              <a href="#" class="btn btn--previous btn__primary">Viernes Anterior</a>
+            </div>
+            <div class="col-6 d-flex flex-row-reverse">
+              <a href="#" class="btn btn__primary btn--previous">Viernes Siguiente</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -85,12 +109,16 @@ export default {
       this.previousArrayIndex = null;
       this.nextArrayIndex = this.currentMovieArrayIndex + 1;
       console.log("typeof Previous Array Index: " + typeof this.previousArrayIndex);
+      // Updates isThisTheLastMovie on data
+      this.isThisTheLastMovie = true;
     } else if (this.currentMovieArrayIndex === allMoviesLength - 1) {
       console.log("this movie is the first movie seen");
       // Gets index of surrounding movies
       this.previousArrayIndex = this.currentMovieArrayIndex - 1;
       this.nextArrayIndex = null;
       console.log("typeof Previous Array Index: " + typeof this.previousArrayIndex);
+      // Updates isThisTheFirstMovie on data
+      this.isThisTheFirstMovie = true;
     } else {
       console.log(`this movie's index is ${this.currentMovieArrayIndex}`);
       // Gets index of surrounding movies
