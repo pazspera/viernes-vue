@@ -1,5 +1,5 @@
 <template>
-  <div v-if="currentMovie">
+  <div v-if="currentMovie" :key="currentMovieKey">
     <MovieHeroComponent :currentMovie="currentMovie"></MovieHeroComponent>
 
     <main class="main-content">
@@ -42,12 +42,19 @@
       <MovieImgComponent :currentMovie="currentMovie"></MovieImgComponent>
 
       <!-- Navigation between previous and next movies -->
+      <!-- 
+        When the navigation btns are pressed, the reloadComponent()
+        method is called so it can render the new movie info.
+        This is because, since the same component is being used,
+        it doesn't do it automatically
+      -->
       <section class="main-text">
         <div class="container">
           <!-- Last movie -->
           <div v-if="isThisTheLastMovie" class="row">
             <div class="col-6">
-              <a class="btn btn--previous btn__primary">Viernes Anterior</a>
+              <router-link :to="{ name: 'movieDetails', params: { id: previousMovieID } }" @click="goToPreviousMovie" class="btn btn--previous btn__primary">Viernes Anterior</router-link>
+              <!-- <a class="btn btn--previous btn__primary">Viernes Anterior</a> -->
             </div>
             <div class="col-6"></div>
           </div>
@@ -106,8 +113,8 @@ export default {
     if (this.currentMovieArrayIndex === 0) {
       console.log("this movie is the last movie seen");
       // Gets index of surrounding movies
-      this.previousArrayIndex = null;
-      this.nextArrayIndex = this.currentMovieArrayIndex + 1;
+      this.nextArrayIndex = null;
+      this.previousArrayIndex = this.currentMovieArrayIndex + 1;
       console.log("typeof Previous Array Index: " + typeof this.previousArrayIndex);
       // Updates isThisTheLastMovie on data
       this.isThisTheLastMovie = true;
@@ -127,11 +134,11 @@ export default {
       console.log("typeof Previous Array Index: " + typeof this.previousArrayIndex);
     }
 
-    console.log(`current index: ${this.currentMovieArrayIndex}`);
+    /* console.log(`current index: ${this.currentMovieArrayIndex}`);
     console.log(`previous index: ${this.previousArrayIndex}`);
     console.log(`next index: ${this.nextArrayIndex}`);
 
-    console.log("current movie", this.currentMovie);
+    console.log("current movie", this.currentMovie); */
 
     // THERE'S AN ERROR HERE THAT'S CAUSING CARRIE TO FAIL
 
@@ -159,6 +166,9 @@ export default {
   },
   data() {
     return {
+      // This key keeps is used to rerender the MovieDetailsView
+      // when the navigation between movies is used
+      currentMovieKey: 0,
       currentMovie: null,
       currentMovieArrayIndex: null,
       nextArrayIndex: null,
@@ -173,6 +183,12 @@ export default {
   methods: {
     onReady() {
       this.$refs.youtube.playVideo();
+    },
+    relodComponent() {
+      this.$forceUpdate();
+    },
+    goToPreviousMovie() {
+      this.currentMovieKey += 1;
     },
   },
 };
