@@ -42,7 +42,35 @@
       <MovieImgComponent :currentMovie="currentMovie"></MovieImgComponent>
 
       <!-- Navigation between previous and next movies -->
-      <MovieNavComponent :previousMovie="previousMovie" :nextMovie="nextMovie" :currentMovieArrayIndex="currentMovieArrayIndex" :lengthMovieArray="lengthMovieArray"></MovieNavComponent>
+      <section class="main-text">
+        <div class="container">
+          <!-- Last movie -->
+          <div v-if="isThisTheLastMovie" class="row">
+            <div class="col-6">
+              <router-link :to="{ name: 'movieDetails', params: { id: previousMovieID } }" @click="goToPreviousMovie" class="btn btn--previous btn__primary">Viernes Anterior</router-link>
+            </div>
+            <div class="col-6"></div>
+          </div>
+
+          <!-- First movie -->
+          <div v-else-if="isThisTheFirstMovie" class="row">
+            <div class="col-6"></div>
+            <div class="col-6 d-flex flex-row-reverse">
+              <router-link :to="{ name: 'movieDetails', params: { id: nextMovieID } }" @click="goToNextMovie" class="btn btn__primary btn--next">Viernes Siguiente</router-link>
+            </div>
+          </div>
+
+          <!-- All other movies -->
+          <div v-else class="row">
+            <div class="col-6">
+              <router-link :to="{ name: 'movieDetails', params: { id: previousMovieID } }" @click="goToPreviousMovie" class="btn btn--previous btn__primary">Viernes Anterior</router-link>
+            </div>
+            <div class="col-6 d-flex flex-row-reverse">
+              <router-link :to="{ name: 'movieDetails', params: { id: nextMovieID } }" @click="goToNextMovie" class="btn btn__primary btn--next">Viernes Siguiente</router-link>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -52,12 +80,22 @@ import allMoviesJSON from "@/assets/data/info_movies1.json";
 import MovieHeroComponent from "@/components/MovieDetails/MovieHeroComponent.vue";
 import MovieCastComponent from "@/components/MovieDetails/MovieCastComponent.vue";
 import MovieImgComponent from "@/components/MovieDetails/MovieImgComponent.vue";
-import MovieNavComponent from "@/components/MovieDetails/MovieNavComponent.vue";
 import YouTube from "vue3-youtube";
+
+// On mounted, it loops through the entire array of movies
+// and adds a property with the index in array,
+// that way that info is available on all movies to move throught the movie details
+allMoviesJSON.forEach((movie) => {
+  movie.ArrayIndex = allMoviesJSON.indexOf(movie);
+});
+
+// Saving the length of allMovies on a variable
+// makes it possible to check for the last movie
+let allMoviesLength = allMoviesJSON.length;
 
 export default {
   name: "MovieDetailsView",
-  components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent, MovieNavComponent },
+  components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent },
   props: ["id"],
   mounted() {
     // ALL OF THIS SHOULD BE ON A METHOD I CAN CALL
@@ -71,8 +109,9 @@ export default {
   },
   data() {
     return {
+      // This key keeps is used to rerender the MovieDetailsView
+      // when the navigation between movies is used
       viewportWidth: null,
-      lengthMovieArray: null,
       // Current movie
       currentMovie: null,
       currentMovieArrayIndex: null,
@@ -95,16 +134,6 @@ export default {
     // Gets all info on currentMovie. Called on mounted and when
     // the navigation between movies is used
     getCurrentMovieInfo() {
-      // On mounted, it loops through the entire array of movies
-      // and adds a property with the index in array,
-      // that way that info is available on all movies to move throught the movie details
-      allMoviesJSON.forEach((movie) => {
-        movie.ArrayIndex = allMoviesJSON.indexOf(movie);
-      });
-
-      // Saving the length of allMovies on a variable
-      // makes it possible to check for the last movie
-      this.lengthMovieArray = allMoviesJSON.length;
       this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
 
       this.currentMovieArrayIndex = this.currentMovie.ArrayIndex;
@@ -112,21 +141,21 @@ export default {
       // Checks if the currentMovieArrayIndex is the first or last
       // then assigns previousArrayIndex and nextArrayIndex based on if it is or not
       if (this.currentMovieArrayIndex === 0) {
-        // console.log("this movie is the last movie seen");
+        console.log("this movie is the last movie seen");
         // Gets index of surrounding movies
         this.nextArrayIndex = this.currentMovieArrayIndex + 1;
         this.previousArrayIndex = null;
         // Updates isThisTheLastMovie on data
         this.isThisTheLastMovie = true;
-      } else if (this.currentMovieArrayIndex === this.lengthMovieArray - 1) {
-        // console.log("this movie is the first movie seen");
+      } else if (this.currentMovieArrayIndex === allMoviesLength - 1) {
+        console.log("this movie is the first movie seen");
         // Gets index of surrounding movies
         this.previousArrayIndex = null;
         this.nextArrayIndex = this.currentMovieArrayIndex - 1;
         // Updates isThisTheFirstMovie on data
         this.isThisTheFirstMovie = true;
       } else {
-        // console.log(`this movie's index is ${this.currentMovieArrayIndex}`);
+        console.log(`this movie's index is ${this.currentMovieArrayIndex}`);
         // Gets index of surrounding movies
         this.previousArrayIndex = this.currentMovieArrayIndex - 1;
         this.nextArrayIndex = this.currentMovieArrayIndex + 1;
@@ -149,14 +178,14 @@ export default {
         this.previousMovieID = allMoviesJSON[this.previousArrayIndex].id;
         // this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
         this.previousMovie = allMoviesJSON.find((movie) => movie.id === this.previousMovieID);
-        // console.log("previous movie", this.previousMovieID);
-        // console.log("previous movie", this.previousMovie);
+        console.log("previous movie", this.previousMovieID);
+        console.log("previous movie", this.previousMovie);
       }
       if (typeof this.nextArrayIndex === "number") {
         this.nextMovieID = allMoviesJSON[this.nextArrayIndex].id;
         this.nextMovie = allMoviesJSON.find((movie) => movie.id === this.nextMovieID);
-        // console.log("next movie", this.nextMovieID);
-        // console.log("next movie", this.nextMovie);
+        console.log("next movie", this.nextMovieID);
+        console.log("next movie", this.nextMovie);
       }
 
       document.title = `${this.currentMovie.name} - Viernes`;
