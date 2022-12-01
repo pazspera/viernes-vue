@@ -42,7 +42,24 @@
       <MovieImgComponent :currentMovie="currentMovie"></MovieImgComponent>
 
       <!-- Navigation between previous and next movies -->
-      <!-- <MovieNavComponent :previousMovie="previousMovie" :nextMovie="nextMovie" :currentMovieArrayIndex="currentMovieArrayIndex" :lengthMovieArray="lengthMovieArray"></MovieNavComponent> -->
+      <section class="main-text">
+        <div class="container">
+          <!-- Last Movie Nav -->
+          <div class="row" v-if="isThisTheLastMovie">
+            <MovieNavLastMovieComponent
+              :nextMovie="nextMovie"
+              :currentMovieArrayIndex="currentMovieArrayIndex"
+              :lengthMovieArray="lengthMovieArray"
+              :isThisTheFirstMovie="isThisTheFirstMovie"
+              :isThisTheLastMovie="isThisTheLastMovie"
+            ></MovieNavLastMovieComponent>
+          </div>
+          <!-- All other movies -->
+          <div class="row" v-else>
+            <MovieNavComponent :previousMovie="previousMovie" :nextMovie="nextMovie" :currentMovieArrayIndex="currentMovieArrayIndex" :lengthMovieArray="lengthMovieArray"></MovieNavComponent>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -52,12 +69,13 @@ import allMoviesJSON from "@/assets/data/info_movies1.json";
 import MovieHeroComponent from "@/components/MovieDetails/MovieHeroComponent.vue";
 import MovieCastComponent from "@/components/MovieDetails/MovieCastComponent.vue";
 import MovieImgComponent from "@/components/MovieDetails/MovieImgComponent.vue";
-/* import MovieNavComponent from "@/components/MovieDetails/MovieNavComponent.vue"; */
+import MovieNavComponent from "@/components/MovieDetails/MovieNavComponent.vue";
+import MovieNavLastMovieComponent from "@/components/MovieDetails/MovieNavLastMovieComponent.vue";
 import YouTube from "vue3-youtube";
 
 export default {
   name: "MovieDetailsView",
-  components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent, /* MovieNavComponent */ },
+  components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent, MovieNavComponent, MovieNavLastMovieComponent },
   props: ["id"],
   mounted() {
     // ALL OF THIS SHOULD BE ON A METHOD I CAN CALL
@@ -65,6 +83,11 @@ export default {
     // PREVIOUS AND NEXT MOVIES ARE UPDATED
     // IT CAN ALSO BE CALLED WHEN THE COMPONENT IS FIRST MOUNTED
     this.getCurrentMovieInfo();
+    console.log("Values in MovieNavComponent");
+    console.log("currentMovieArrayIndex", this.currentMovieArrayIndex);
+    console.log("next movie", this.nextMovie);
+    console.log("isThisTheLastMovie", this.isThisTheLastMovie);
+    console.log("isThisTheFirstMovie", this.isThisTheFirstMovie);
   },
   beforeUpdate() {
     this.getCurrentMovieInfo();

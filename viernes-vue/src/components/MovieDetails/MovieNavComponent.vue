@@ -34,14 +34,8 @@
 export default {
   name: "MovieNavComponent",
   props: {
-    previousMovie: {
-      type: Object,
-      required: true,
-    },
-    nextMovie: {
-      type: Object,
-      required: true,
-    },
+    previousMovie: {},
+    nextMovie: {},
     currentMovieArrayIndex: {
       type: Number,
       required: true,
