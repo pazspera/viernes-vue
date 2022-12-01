@@ -1,5 +1,63 @@
 [
   {
+    "id": "everything_everywhere",
+    "name": "Everything Everywhere All At Once",
+    "year": 2022,
+    "date_seen": "2022-11-18T03:00:00.000Z",
+    "img_card": {
+      "src": "https://github.com/pazspera/viernes-img/blob/main/cards/card_everything_everywhere.jpg?raw=true",
+      "alt": "Mujer oriental haciendo flexiones de brazos con sus dedos meñiques"
+    },
+    "background_img": "https://github.com/pazspera/viernes-img/blob/main/hero/hero_everything_everywhere.jpg?raw=true",
+    "link_page": "everything_everywhere.html",
+    "pick": "Paz",
+    "pick_category": "Paz",
+    "sinopsis": "Una anciana inmigrante china se ve envuelta en una loca aventura, donde ella sola puede salvar el mundo explorando otros universos que se conectan con sus vidas pasadas.",
+    "director": "Dan Kwan & Daniel Scheinert",
+    "duration": "2h 19min",
+    "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/wxN1T1uxQ2g\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+    "trailerLink": "https://www.youtube.com/watch?v=wxN1T1uxQ2g&t=1s",
+    "cast": [
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/everything_everywhere/everything_everywhere_cast_1.jpg?raw=true",
+        "actor": "Michelle Yeoh"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/everything_everywhere/everything_everywhere_cast_2.jpg?raw=true",
+        "actor": "Stephanie Hsu"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/everything_everywhere/everything_everywhere_cast_3.jpg?raw=true",
+        "actor": "Ke Huy Quan"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/everything_everywhere/everything_everywhere_cast_4.jpg?raw=true",
+        "actor": "Jamie Lee Curtis"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/everything_everywhere/everything_everywhere_cast_5.jpg?raw=true",
+        "actor": "James Hong"
+      }
+    ],
+    "img_row": [
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/everything_everywhere/everything_everywhere_img_1.jpg?raw=true",
+        "alt": "Cantante de ópera vestida con una corona de flores y con los ojos cerrados a punto de cantar",
+        "class": "always_show"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/everything_everywhere/everything_everywhere_img_2.jpg?raw=true",
+        "alt": "Dos hombres sentados delante de un escritorio, una mujer sentada detrás del escritorio los mira con impaciencia",
+        "class": "always_show"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/everything_everywhere/everything_everywhere_img_3.jpg?raw=true",
+        "alt": "Una roca con ojos de juguete se asoma sobre un acantilado",
+        "class": "hidden_first"
+      }
+    ]
+  },
+  {
     "id": "carrie",
     "name": "Carrie",
     "year": 1976,

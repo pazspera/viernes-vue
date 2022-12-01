@@ -42,7 +42,7 @@
       <MovieImgComponent :currentMovie="currentMovie"></MovieImgComponent>
 
       <!-- Navigation between previous and next movies -->
-      <MovieNavComponent :previousMovie="previousMovie" :nextMovie="nextMovie" :currentMovieArrayIndex="currentMovieArrayIndex" :lengthMovieArray="lengthMovieArray"></MovieNavComponent>
+      <!-- <MovieNavComponent :previousMovie="previousMovie" :nextMovie="nextMovie" :currentMovieArrayIndex="currentMovieArrayIndex" :lengthMovieArray="lengthMovieArray"></MovieNavComponent> -->
     </main>
   </div>
 </template>
@@ -52,12 +52,12 @@ import allMoviesJSON from "@/assets/data/info_movies1.json";
 import MovieHeroComponent from "@/components/MovieDetails/MovieHeroComponent.vue";
 import MovieCastComponent from "@/components/MovieDetails/MovieCastComponent.vue";
 import MovieImgComponent from "@/components/MovieDetails/MovieImgComponent.vue";
-import MovieNavComponent from "@/components/MovieDetails/MovieNavComponent.vue";
+/* import MovieNavComponent from "@/components/MovieDetails/MovieNavComponent.vue"; */
 import YouTube from "vue3-youtube";
 
 export default {
   name: "MovieDetailsView",
-  components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent, MovieNavComponent },
+  components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent, /* MovieNavComponent */ },
   props: ["id"],
   mounted() {
     // ALL OF THIS SHOULD BE ON A METHOD I CAN CALL
