@@ -1,4 +1,14 @@
 <template>
+  <!-- Hero -->
+  <section class="hero-grid">
+    <div class="hero-grid__img" :style="{ backgroundImage: `url(${heroBackgroundImg})` }"></div>
+    <div class="hero-grid__cartel hero-grid__cartel--cartel-corto">
+      <h1 class="hero-grid__titulo">Historial de películas</h1>
+      <p class="hero-grid__texto-final">Todos los viernes todos.</p>
+    </div>
+  </section>
+
+  <br />
   <h1>Opciones aleatorias view</h1>
   <ul>
     <li v-for="movie in allRandomMovies" :key="movie.id">{{ movie.name }}</li>
@@ -35,6 +45,7 @@ export default {
     return {
       allRandomMovies: null,
       array: [],
+      heroBackgroundImg: "https://github.com/pazspera/viernes-img/blob/main/hero/hero_seleccion_peliculas.jpg?raw=true",
     };
   },
 };
