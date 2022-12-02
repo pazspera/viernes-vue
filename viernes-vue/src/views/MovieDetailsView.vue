@@ -1,5 +1,5 @@
 <template>
-  <div v-if="currentMovie">
+  <div v-if="currentMovie" @update-view="updateViewFromNav">
     <MovieHeroComponent :currentMovie="currentMovie"></MovieHeroComponent>
 
     <main class="main-content">
@@ -78,6 +78,16 @@ export default {
   components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent, MovieNavComponent, MovieNavLastMovieComponent },
   props: ["id"],
   mounted() {
+    // On mounted, it loops through the entire array of movies
+    // and adds a property with the index in array,
+    // that way that info is available on all movies to move throught the movie details
+    allMoviesJSON.forEach((movie) => {
+      movie.ArrayIndex = allMoviesJSON.indexOf(movie);
+    });
+    // Saving the length of allMovies on a variable
+    // makes it possible to check for the last movie
+    this.lengthMovieArray = allMoviesJSON.length;
+
     // ALL OF THIS SHOULD BE ON A METHOD I CAN CALL
     // THAT WAY, WHEN WE CHANGE MOVIES, ALL THE INFO OF THE
     // PREVIOUS AND NEXT MOVIES ARE UPDATED
@@ -115,19 +125,21 @@ export default {
     onReady() {
       this.$refs.youtube.playVideo();
     },
+    updateViewFromNav(previousMovieArrayIndex) {
+      console.log(`The id value I just received form the navLastMovie is ${previousMovieArrayIndex}`);
+      // I'm receiving the new ArrayIndex and change the data value so
+      // once the component is updated, the navigation changes
+      this.currentMovieArrayIndex = previousMovieArrayIndex;
+      // And I call the function to trigger the update on isThisTheFirstMovie and
+      // on thisIsTheLastMovie
+      this.getCurrentMovieInfo();
+      console.log("new values");
+      console.log(`isThisTheLastMovie: ${this.isThisTheLastMovie}`);
+      console.log(`isThisTheFirstMovie: ${this.isThisTheFirstMovie}`);
+    },
     // Gets all info on currentMovie. Called on mounted and when
     // the navigation between movies is used
     getCurrentMovieInfo() {
-      // On mounted, it loops through the entire array of movies
-      // and adds a property with the index in array,
-      // that way that info is available on all movies to move throught the movie details
-      allMoviesJSON.forEach((movie) => {
-        movie.ArrayIndex = allMoviesJSON.indexOf(movie);
-      });
-
-      // Saving the length of allMovies on a variable
-      // makes it possible to check for the last movie
-      this.lengthMovieArray = allMoviesJSON.length;
       this.currentMovie = allMoviesJSON.find((movie) => movie.id === this.id);
 
       this.currentMovieArrayIndex = this.currentMovie.ArrayIndex;

@@ -1,6 +1,6 @@
 <template>
   <div class="col-6">
-    <router-link :to="{ name: 'movieDetails', params: { id: previousMovie.id } }" @click="updateMovieInfo(previousMovie.id)" class="btn btn__primary btn--next">Viernes Anterior</router-link>
+    <router-link :to="{ name: 'movieDetails', params: { id: previousMovie.id } }" @click="updateMovieInfo(previousMovie.ArrayIndex)" class="btn btn__primary btn--next">Viernes Anterior</router-link>
   </div>
   <div class="col-6"></div>
 </template>
@@ -29,12 +29,12 @@ export default {
     console.log("isThisTheFirstMovie", this.isThisTheFirstMovie);
   },
   methods: {
-    updateMovieInfo(previousMovieID) {
-      console.log(`this is Previous Movie ID: ${previousMovieID}`);
+    updateMovieInfo(previousMovieArrayIndex) {
+      console.log(`this is Previous Movie ID: ${previousMovieArrayIndex}`);
       // We need to emit back to the parent (MovieDetailsView) that the new
       // currentMovieArrayIndex changed and that isThisTheFirstMovie and
       // isThisTheLastMovie also changed
-      
+      this.$emit("updateView", previousMovieArrayIndex);
     },
     /* checkFirstMovie() {
       if (this.currentMovieArrayIndex === this.lengthMovieArray - 1) {
