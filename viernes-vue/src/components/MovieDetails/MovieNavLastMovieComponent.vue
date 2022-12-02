@@ -1,6 +1,6 @@
 <template>
   <div class="col-6">
-    <router-link :to="{ name: 'movieDetails', params: { id: nextMovie.id } }" class="btn btn__primary btn--next">Viernes Anterior</router-link>
+    <router-link :to="{ name: 'movieDetails', params: { id: previousMovie.id } }" @click="updateMovieInfo(previousMovie.id)" class="btn btn__primary btn--next">Viernes Anterior</router-link>
   </div>
   <div class="col-6"></div>
 </template>
@@ -9,7 +9,7 @@
 export default {
   name: "MovieNavLastMovieComponent",
   props: {
-    nextMovie: {},
+    previousMovie: {},
     currentMovieArrayIndex: {
       type: Number,
       required: true,
@@ -24,11 +24,18 @@ export default {
   mounted() {
     console.log("Values in MovieNavComponent");
     console.log("currentMovieArrayIndex", this.currentMovieArrayIndex);
-    console.log("next movie", this.nextMovie);
+    console.log("previous", this.previousMovie);
     console.log("isThisTheLastMovie", this.isThisTheLastMovie);
     console.log("isThisTheFirstMovie", this.isThisTheFirstMovie);
   },
   methods: {
+    updateMovieInfo(previousMovieID) {
+      console.log(`this is Previous Movie ID: ${previousMovieID}`);
+      // We need to emit back to the parent (MovieDetailsView) that the new
+      // currentMovieArrayIndex changed and that isThisTheFirstMovie and
+      // isThisTheLastMovie also changed
+      
+    },
     /* checkFirstMovie() {
       if (this.currentMovieArrayIndex === this.lengthMovieArray - 1) {
         this.isThisTheFirstMovie = true;

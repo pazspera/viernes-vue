@@ -47,7 +47,7 @@
           <!-- Last Movie Nav -->
           <div class="row" v-if="isThisTheLastMovie">
             <MovieNavLastMovieComponent
-              :nextMovie="nextMovie"
+              :previousMovie="previousMovie"
               :currentMovieArrayIndex="currentMovieArrayIndex"
               :lengthMovieArray="lengthMovieArray"
               :isThisTheFirstMovie="isThisTheFirstMovie"
@@ -137,15 +137,15 @@ export default {
       if (this.currentMovieArrayIndex === 0) {
         // console.log("this movie is the last movie seen");
         // Gets index of surrounding movies
-        this.nextArrayIndex = this.currentMovieArrayIndex + 1;
-        this.previousArrayIndex = null;
+        this.nextArrayIndex = null;
+        this.previousArrayIndex = this.currentMovieArrayIndex + 1;
         // Updates isThisTheLastMovie on data
         this.isThisTheLastMovie = true;
       } else if (this.currentMovieArrayIndex === this.lengthMovieArray - 1) {
         // console.log("this movie is the first movie seen");
         // Gets index of surrounding movies
-        this.previousArrayIndex = null;
-        this.nextArrayIndex = this.currentMovieArrayIndex - 1;
+        this.previousArrayIndex = this.currentMovieArrayIndex - 1;
+        this.nextArrayIndex = null;
         // Updates isThisTheFirstMovie on data
         this.isThisTheFirstMovie = true;
       } else {
