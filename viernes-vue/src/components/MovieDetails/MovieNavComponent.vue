@@ -25,6 +25,11 @@
         is true
       -->
       <div class="row">
+        <div class="col-12">
+          <p>Info desde Movie Nav</p>
+          <p>Is this the last movie?: {{ isThisTheLastMovie }}</p>
+          <p>Is this the first movie?: {{ isThisTheFirstMovie }}</p>
+        </div>
         <div class="col-6">
           <router-link :to="{ name: 'movieDetails', params: { id: previousMovie.id } }" @click="forceReloadComponent" class="btn btn--previous btn__primary">Viernes Anterior</router-link>
         </div>

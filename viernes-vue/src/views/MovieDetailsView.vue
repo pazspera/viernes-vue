@@ -55,7 +55,7 @@
             ></MovieNavLastMovieComponent>
           </div> -->
           <!-- All other movies -->
-          <div class="row" >
+          <!-- <div class="row">
             <MovieNavComponent
               :previousMovie="previousMovie"
               :nextMovie="nextMovie"
@@ -64,9 +64,34 @@
               :firstMovieCheck="isThisTheFirstMovie"
               :lastMovieCheck="isThisTheLastMovie"
             ></MovieNavComponent>
+          </div> -->
+          <!-- Template directo -->
+          <div class="row">
+            <div class="col-12">
+              <p>Info desde Movie Nav</p>
+              <p>Is this the last movie?: {{ isThisTheLastMovie }}</p>
+              <p>Is this the first movie?: {{ isThisTheFirstMovie }}</p>
+            </div>
+            <div class="col-6">
+              <router-link :to="{ name: 'movieDetails', params: { id: previousMovie.id } }" @click="forceReloadComponent" class="btn btn--previous btn__primary">Viernes Anterior</router-link>
+            </div>
+            <div class="col-6 d-flex flex-row-reverse">
+              <router-link
+                :to="{ name: 'movieDetails', params: { id: nextMovie.id } }"
+                @click="forceReloadComponent"
+                class="btn btn__primary btn--next"
+                :class="{ disabled: isThisTheLastMovie }"
+                :disabled="isThisTheLastMovie"
+                >Viernes Siguiente</router-link
+              >
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- Test printing out if it's the last movie -->
+      <p>Is this the last movie?: {{ isThisTheLastMovie }}</p>
+      <p>Is this the first movie?: {{ isThisTheFirstMovie }}</p>
     </main>
   </div>
 </template>
@@ -76,13 +101,13 @@ import allMoviesJSON from "@/assets/data/info_movies1.json";
 import MovieHeroComponent from "@/components/MovieDetails/MovieHeroComponent.vue";
 import MovieCastComponent from "@/components/MovieDetails/MovieCastComponent.vue";
 import MovieImgComponent from "@/components/MovieDetails/MovieImgComponent.vue";
-import MovieNavComponent from "@/components/MovieDetails/MovieNavComponent.vue";
+/* import MovieNavComponent from "@/components/MovieDetails/MovieNavComponent.vue"; */
 /* import MovieNavLastMovieComponent from "@/components/MovieDetails/MovieNavLastMovieComponent.vue"; */
 import YouTube from "vue3-youtube";
 
 export default {
   name: "MovieDetailsView",
-  components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent, MovieNavComponent, /* MovieNavLastMovieComponent */ },
+  components: { MovieHeroComponent, MovieCastComponent, YouTube, MovieImgComponent /* MovieNavComponent */ /* MovieNavLastMovieComponent */ },
   props: ["id"],
   mounted() {
     // On mounted, it loops through the entire array of movies
@@ -107,6 +132,8 @@ export default {
     console.log("isThisTheFirstMovie", this.isThisTheFirstMovie);
   },
   beforeUpdate() {
+    console.log("before update");
+    this.checkPreviousAndNextMovies();
     this.getCurrentMovieInfo();
   },
   data() {
@@ -126,8 +153,18 @@ export default {
       nextArrayIndex: null,
       nextMovieID: null,
       nextMovie: null,
+      disableBtn: false,
     };
   },
+  /* computed: {
+    checkLastMovie() {
+      console.log(`in computed - isThisTheLastMovie: ${this.isThisTheLastMovie}`);
+      if (this.isThisTheLastMovie) {
+        this.disableBtn = true;
+        return this.disableBtn;
+      }
+    },
+  }, */
   methods: {
     onReady() {
       this.$refs.youtube.playVideo();
@@ -220,6 +257,21 @@ export default {
       this.currentMovie = this.nextMovie;
       this.currentMovieArrayIndex = this.nextArrayIndex;
       this.getCurrentMovieInfo();
+    },
+    checkPreviousAndNextMovies() {
+      console.log("checkPreviousAndNextMovies");
+      // Check last movie
+      if (this.currentMovieArrayIndex === 0) {
+        this.isThisTheLastMovie = true;
+      } else {
+        this.isThisTheLastMovie = false;
+      }
+      // Check first movie
+      if (this.currentMovieArrayIndex === this.lengthMovieArray - 1) {
+        this.isThisTheFirstMovie = true;
+      } else {
+        this.isThisTheFirstMovie = false;
+      }
     },
   },
 };
