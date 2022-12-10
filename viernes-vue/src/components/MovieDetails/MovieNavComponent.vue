@@ -2,23 +2,29 @@
   <section class="main-text">
     <div class="container">
       <!-- Last movie -->
-      <div v-if="isThisTheLastMovie" class="row">
+      <!-- <div v-if="isThisTheLastMovie" class="row">
         <div class="col-6">
           <router-link :to="{ name: 'movieDetails', params: { id: nextMovie.id } }" @click="forceReloadComponent" class="btn btn__primary btn--next">Viernes Anterior</router-link>
         </div>
         <div class="col-6"></div>
-      </div>
+      </div> -->
 
       <!-- First movie -->
-      <div v-else-if="isThisTheFirstMovie" class="row">
+      <!-- <div v-else-if="isThisTheFirstMovie" class="row">
         <div class="col-6"></div>
         <div class="col-6 d-flex flex-row-reverse">
           <router-link :to="{ name: 'movieDetails', params: { id: previousMovie.id } }" @click="forceReloadComponent" class="btn btn--previous btn__primary">Viernes Siguiente</router-link>
         </div>
-      </div>
+      </div> -->
 
       <!-- All other movies -->
-      <div v-else class="row">
+      <!-- 
+        Trying out changing the availability of the btns depending on whether
+        the movie is the last o first one. Instead of rendering different components,
+        add a class to disable the btns if isThisTheFirstMovie or isThisTheLastMovie
+        is true
+      -->
+      <div class="row">
         <div class="col-6">
           <router-link :to="{ name: 'movieDetails', params: { id: previousMovie.id } }" @click="forceReloadComponent" class="btn btn--previous btn__primary">Viernes Anterior</router-link>
         </div>
@@ -44,6 +50,12 @@ export default {
       type: Number,
       required: true,
     },
+    firstMovieCheck: {
+      type: Boolean,
+    },
+    lastMovieCheck: {
+      type: Boolean,
+    },
   },
   mounted() {
     console.log("Values in MovieNavComponent");
@@ -55,8 +67,8 @@ export default {
   },
   data() {
     return {
-      isThisTheFirstMovie: false,
-      isThisTheLastMovie: false,
+      isThisTheFirstMovie: this.firstMovieCheck,
+      isThisTheLastMovie: this.lastMovieCheck,
     };
   },
   methods: {
