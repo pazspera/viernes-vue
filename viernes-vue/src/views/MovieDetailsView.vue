@@ -65,33 +65,39 @@
               :lastMovieCheck="isThisTheLastMovie"
             ></MovieNavComponent>
           </div> -->
+
           <!-- Template directo -->
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-12">
               <p>Info desde Movie Nav</p>
               <p>Is this the last movie?: {{ isThisTheLastMovie }}</p>
               <p>Is this the first movie?: {{ isThisTheFirstMovie }}</p>
+              <p>CurrentMovieArrayIndex: {{ currentMovieArrayIndex }}</p>
             </div>
             <div class="col-6">
-              <router-link :to="{ name: 'movieDetails', params: { id: previousMovie.id } }" @click="forceReloadComponent" class="btn btn--previous btn__primary">Viernes Anterior</router-link>
+              <router-link
+                :to="{ name: 'movieDetails', params: { id: previousMovie.id } }"
+                class="btn btn--previous btn__primary"
+                >Viernes Anterior</router-link
+              >
             </div>
             <div class="col-6 d-flex flex-row-reverse">
               <router-link
                 :to="{ name: 'movieDetails', params: { id: nextMovie.id } }"
-                @click="forceReloadComponent"
                 class="btn btn__primary btn--next"
                 :class="{ disabled: isThisTheLastMovie }"
                 :disabled="isThisTheLastMovie"
                 >Viernes Siguiente</router-link
               >
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
 
       <!-- Test printing out if it's the last movie -->
-      <p>Is this the last movie?: {{ isThisTheLastMovie }}</p>
+      <!-- <p>Is this the last movie?: {{ isThisTheLastMovie }}</p>
       <p>Is this the first movie?: {{ isThisTheFirstMovie }}</p>
+      <p>CurrentMovieArrayIndex: {{ currentMovieArrayIndex }}</p> -->
     </main>
   </div>
 </template>
@@ -125,14 +131,15 @@ export default {
     // PREVIOUS AND NEXT MOVIES ARE UPDATED
     // IT CAN ALSO BE CALLED WHEN THE COMPONENT IS FIRST MOUNTED
     this.getCurrentMovieInfo();
-    console.log("Values in MovieNavComponent");
-    console.log("currentMovieArrayIndex", this.currentMovieArrayIndex);
-    console.log("next movie", this.nextMovie);
-    console.log("isThisTheLastMovie", this.isThisTheLastMovie);
-    console.log("isThisTheFirstMovie", this.isThisTheFirstMovie);
+    // console.log("Values in MovieNavComponent");
+    // console.log("currentMovieArrayIndex", this.currentMovieArrayIndex);
+    // console.log("next movie", this.nextMovie);
+    // console.log("isThisTheLastMovie", this.isThisTheLastMovie);
+    // console.log("isThisTheFirstMovie", this.isThisTheFirstMovie);
+    this.checkPreviousAndNextMovies();
   },
   beforeUpdate() {
-    console.log("before update");
+    // console.log("before update");
     this.checkPreviousAndNextMovies();
     this.getCurrentMovieInfo();
   },
@@ -259,7 +266,8 @@ export default {
       this.getCurrentMovieInfo();
     },
     checkPreviousAndNextMovies() {
-      console.log("checkPreviousAndNextMovies");
+      // console.log("checkPreviousAndNextMovies");
+      // console.log(`currentMovieArrayIndex: ${this.currentMovieArrayIndex}`);
       // Check last movie
       if (this.currentMovieArrayIndex === 0) {
         this.isThisTheLastMovie = true;

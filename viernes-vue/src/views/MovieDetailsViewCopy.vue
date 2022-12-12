@@ -81,6 +81,7 @@ import MovieHeroComponent from "@/components/MovieDetails/MovieHeroComponent.vue
 import MovieCastComponent from "@/components/MovieDetails/MovieCastComponent.vue";
 import MovieImgComponent from "@/components/MovieDetails/MovieImgComponent.vue";
 import YouTube from "vue3-youtube";
+import { store } from "@/store.js";
 
 // On mounted, it loops through the entire array of movies
 // and adds a property with the index in array,
@@ -125,6 +126,8 @@ export default {
       nextArrayIndex: null,
       nextMovieID: null,
       nextMovie: null,
+      // Added store
+      store,
     };
   },
   methods: {

@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import HistorialView from "../views/HistorialView.vue";
 import OpcionesAleatoriasView from "../views/OpcionesAleatoriasView.vue";
 import MovieDetailsView from "../views/MovieDetailsView.vue";
+// import MovieDetailsViewCopy from "../views/MovieDetailsViewCopy.vue";
 
 const routes = [
   {
