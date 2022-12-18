@@ -4,6 +4,7 @@ import HistorialView from "../views/HistorialView.vue";
 import OpcionesAleatoriasView from "../views/OpcionesAleatoriasView.vue";
 import MovieDetailsView from "../views/MovieDetailsView.vue";
 // import MovieDetailsViewCopy from "../views/MovieDetailsViewCopy.vue";
+import YearView from "@/views/YearView.vue";
 
 const routes = [
   {
@@ -51,6 +52,11 @@ const routes = [
     name: "movieDetails",
     component: MovieDetailsView,
     props: true,
+  },
+  {
+    path: "/historial/:year",
+    name: "yearView",
+    component: YearView,
   },
 ];
 

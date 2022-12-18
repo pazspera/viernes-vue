@@ -16,10 +16,11 @@
           <div v-for="year in years" :key="year" class="card card-pelicula card-vertical col-12 col-sm-6 col-lg-4">
             <div class="card-body card-vertical__contenido">
               <h2 class="card-vertical__titulo">
-                <a href="#" class="stretched-link">{{ year.year }}</a>
+                <router-link :to="{ name: 'yearView', params: { year: year.year } }" class="stretched-link" :year="year">{{ year.year }}</router-link>
+                <!-- <a href="#" class="stretched-link">{{ year.year }}</a> -->
               </h2>
             </div>
-            <img :="year.imgYear">
+            <img :="year.imgYear" />
           </div>
         </div>
       </div>
@@ -32,6 +33,7 @@ export default {
   name: "HistorialView",
   mounted() {
     document.title = "Historial de películas - Viernes";
+    console.log(this.years);
   },
   data() {
     return {
