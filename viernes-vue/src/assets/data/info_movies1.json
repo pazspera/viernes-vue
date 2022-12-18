@@ -1,5 +1,63 @@
 [
   {
+    "id": "walk_hard",
+    "name": "Walk Hard: The Dewey Cox Story",
+    "year": 2007,
+    "date_seen": "2022-12-16T03:00:00.000Z",
+    "img_card": {
+      "src": "https://github.com/pazspera/viernes-img/blob/main/cards/card_walk_hard.jpg?raw=true",
+      "alt": "Foto de publicidad de una banda de los años '50"
+    },
+    "background_img": "https://github.com/pazspera/viernes-img/blob/main/hero/hero_walk_hard.jpg?raw=true",
+    "link_page": "walk_hard.html",
+    "pick": "Pollo",
+    "pick_category": "Pollo",
+    "sinopsis": "El cantante Dewey Cox supera la adversidad para convertirse en una leyenda musical.",
+    "director": "Jake Kasdan",
+    "duration": "1h 36min",
+    "trailer": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/4W3zQkGpzC0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+    "trailerLink": "https://www.youtube.com/watch?v=4W3zQkGpzC0",
+    "cast": [
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/walk_hard/walk_hard_cast_1.jpg?raw=true",
+        "actor": "John C. Reilly"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/walk_hard/walk_hard_cast_2.jpg?raw=true",
+        "actor": "Jenna Fischer"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/walk_hard/walk_hard_cast_3.jpg?raw=true",
+        "actor": "Tim Meadows"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/walk_hard/walk_hard_cast_4.jpg?raw=true",
+        "actor": "Chris Parnell"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/walk_hard/walk_hard_cast_5.jpg?raw=true",
+        "actor": "Kristen Wiig"
+      }
+    ],
+    "img_row": [
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/walk_hard/walk_hard_img_1.jpg?raw=true",
+        "alt": "Dewey Cox y Elvis Presley parados en pose de pelea mirándose",
+        "class": "always_show"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/walk_hard/walk_hard_img_2.jpg?raw=true",
+        "alt": "Hombre sosteniendo un micrófono delante de una cabra esperando que hable",
+        "class": "always_show"
+      },
+      {
+        "img": "https://github.com/pazspera/viernes-img/blob/main/movies/walk_hard/walk_hard_img_3.jpg?raw=true",
+        "alt": "Miembros de una banda sentados en ropa interior en una habitación de hotel",
+        "class": "hidden_first"
+      }
+    ]
+  },
+  {
     "id": "hard_eight",
     "name": "Hard Eight",
     "year": 1996,
