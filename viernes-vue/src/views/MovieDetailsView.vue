@@ -28,7 +28,7 @@
           </div>
           <div class="row">
             <!-- Changes content depending on viewport Width -->
-            <div v-if="viewportWidth < 768" class="col col-lg-9">
+            <div v-if="viewportWidth < 992" class="col col-lg-9">
               <a :href="currentMovie.trailerLink" class="btn btn__primary" target="_blank" rel="noreferrer">Ver Trailer</a>
             </div>
             <div v-else class="col col-lg-9">
