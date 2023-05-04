@@ -1,7 +1,7 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/admin">Admin</router-link>
+    <router-link to="/random-admin">Random Admin</router-link>
   </nav>
   <router-view/>
 </template>

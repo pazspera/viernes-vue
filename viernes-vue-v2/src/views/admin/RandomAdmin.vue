@@ -25,6 +25,7 @@
 
 <script>
 import { ref } from "vue";
+import { projectFirestore } from "@/firebase/config.js";
 
 export default {
   name: "AdminView",
@@ -33,8 +34,19 @@ export default {
     const trailer = ref("");
     const image = ref("");
 
-    const handleSubmit = () => {
-      console.log(name.value, trailer.value, image.value);
+    const handleSubmit = async () => {
+      const randomMovie = {
+        name: name.value,
+        trailer: trailer.value,
+        image: image.value,
+      };
+
+      const res = await projectFirestore.collection("random-movies").add(randomMovie);
+      console.log(res);
+
+      name.value = "";
+      trailer.value = "";
+      image.value = "";
     };
 
     return { name, trailer, image, handleSubmit };
